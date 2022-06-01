@@ -19,9 +19,9 @@ public class Farmer {
         inventory.add(new Apple(Colors.RED, 100., "Iran"));
         inventory.add(new Apple(Colors.YELLOW, 150., "Iran"));
 
-        ApplePredicate greenApplePredicate = new AppleGreenColorPredicate();
+/*      ApplePredicate greenApplePredicate = new AppleGreenColorPredicate();
         ApplePredicate redApplePredicate = new AppleRedColorPredicate();
-        ApplePredicate heavyApplePredicate = new AppleHeavyWeightPredicate();
+        ApplePredicate heavyApplePredicate = new AppleHeavyWeightPredicate();*/
 
         System.out.println(Farmer.filterApples(inventory, new ApplePredicate() {
             @Override
