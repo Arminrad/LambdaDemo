@@ -1,3 +1,5 @@
+package lambda;
+
 public class Apple {
     private Colors colors;
     private Double weight;
@@ -35,7 +37,7 @@ public class Apple {
 
     @Override
     public String toString() {
-        return "Apple{" +
+        return "lambda.Apple{" +
                 "colors=" + colors +
                 ", weight=" + weight +
                 ", origin='" + origin + '\'' +
