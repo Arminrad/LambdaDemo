@@ -23,9 +23,24 @@ public class Farmer {
         ApplePredicate redApplePredicate = new AppleRedColorPredicate();
         ApplePredicate heavyApplePredicate = new AppleHeavyWeightPredicate();
 
-        System.out.println(Farmer.filterApples(inventory, greenApplePredicate));
-        System.out.println(Farmer.filterApples(inventory, redApplePredicate));
-        System.out.println(Farmer.filterApples(inventory, heavyApplePredicate));
+        System.out.println(Farmer.filterApples(inventory, new ApplePredicate() {
+            @Override
+            public Boolean test(Apple apple) {
+                return apple.getColors().equals(Colors.GREEN);
+            }
+        }));
+        System.out.println(Farmer.filterApples(inventory, new ApplePredicate() {
+            @Override
+            public Boolean test(Apple apple) {
+                return apple.getColors().equals(Colors.RED);
+            }
+        }));
+        System.out.println(Farmer.filterApples(inventory, new ApplePredicate() {
+            @Override
+            public Boolean test(Apple apple) {
+                return apple.getWeight() >= 150;
+            }
+        }));
     }
 
     /*public static List<Apple> filterRedApples(List<Apple> inventory) {
