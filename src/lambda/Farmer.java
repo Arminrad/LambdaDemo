@@ -2,11 +2,21 @@ package lambda;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 public class Farmer {
 
     //User Case: farmer asked us to filter apples by color
-    public static List<Apple> filterApples(List<Apple> inventory, ApplePredicate applePredicate) {
+/*    public static List<Apple> filterApples(List<Apple> inventory, ApplePredicate applePredicate) {
+        List<Apple> result = new ArrayList<>();
+        for (Apple apple: inventory) {
+            if (applePredicate.test(apple))
+                result.add(apple);
+        }
+        return result;
+    }*/
+
+    public static List<Apple> filterApples(List<Apple> inventory, Predicate<Apple> applePredicate) {
         List<Apple> result = new ArrayList<>();
         for (Apple apple: inventory) {
             if (applePredicate.test(apple))
@@ -14,6 +24,7 @@ public class Farmer {
         }
         return result;
     }
+
 
     public static void main(String[] args) {
         List<Apple> inventory = new ArrayList<>();
